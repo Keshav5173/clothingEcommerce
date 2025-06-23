@@ -1,12 +1,41 @@
-# React + Vite
+# 🛒 Product Showcase App using React & Tailwind
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based product listing page that fetches real-time product data from a public API, allows users to filter by category, search for specific products, and view a carousel of products using `react-slick`.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Project Description
 
-## Expanding the ESLint configuration
+This project is a responsive **e-commerce product showcase** page built using **React.js**, **Tailwind CSS**, and **Axios** for data fetching. It features:
+- Real-time product fetching from [FakeStoreAPI](https://fakestoreapi.com/)
+- Category-based filtering
+- Text-based search
+- Product carousel using `react-slick`
+- Clean and modern responsive UI
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠 Tech Stack
+
+| Technology        | Role                                |
+|------------------|-------------------------------------|
+| **React.js**      | UI & Component-based architecture   |
+| **Tailwind CSS**  | Utility-first styling               |
+| **Axios**         | API calls to FakeStore API          |
+| **React Slick**   | Product image carousel/slider       |
+| **FakeStore API** | Mock product data source            |
+
+---
+
+## 🧠 Key Concepts Learned / Implemented
+
+- How to fetch data asynchronously using `axios` and `useEffect`.
+- Dynamically extract unique categories using `Set` in JavaScript.
+- Apply **filtering** logic based on category and search input.
+- Responsive design and layout using **Tailwind CSS**.
+- Implement `react-slick` for horizontal carousel views.
+- Efficient component design with `ProductCardComponent`.
+
+---
+
+
