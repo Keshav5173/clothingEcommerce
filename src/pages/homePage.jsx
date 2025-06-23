@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ProductCardComponet from "../components/productCardComponent";
+import Slider from "react-slick"
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function HomePage() {
   const [productData, setProductData] = useState([]);
@@ -28,6 +31,14 @@ function HomePage() {
     fetchProducts();
   }, []);
 
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 2
+  };
+
   const handlecategoryChange = (e)=>{
     setCat(e.target.value);
   }
@@ -37,8 +48,8 @@ function HomePage() {
   }
 
   return (
-    <div className="w-screen bg-sky-200">
-      <div className="w-screen h-[10vh] flex justify-center items-center relative gap-4">
+    <div className="w-screen h-full bg-sky-200">
+      <div className="w-screen h-[10vh] flex justify-center items-center relative gap-4 bg-sky-300">
         <div className="flex relative gap-[50px]">
             <input
                 type="text"
@@ -56,7 +67,22 @@ function HomePage() {
           </div>
         <div>
       </div>
+      <div className="w-[90vw] m-auto mt-[3vh]">
+        <Slider {...settings}>
+          {productData.map((product, index)=>(
+            <div className="w-[15vw] h-[40vh] bg-[#f0f8ff] relative ">
+              <div className="bg-[#f0f8ff]">
+                <img className="w-[13vw] h-[23vh] absolute top-[3%] left-[50%] translate-x-[-50%] bg-[#f0f8ff] " src={product.image} alt="" />
+              </div>
 
+              <div className="absolute top-[65%] left-[50%] translate-x-[-50%] text-center ">
+                <p className="text-xl font-semibold">₹{product.price}</p>
+                <button className="w-[10vw] h-[5vh] bg-sky-300 rounded-md border-2 text-xl hover:bg-sky-400 transition duration-200 cursor-pointer">View Details</button>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
 
       <div className="w-full flex flex-wrap justify-center">
         {productData
@@ -75,9 +101,10 @@ function HomePage() {
           ))}
       </div>
 
-
     </div>
   );
 }
 
 export default HomePage;
+
+
