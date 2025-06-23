@@ -3,9 +3,8 @@ import './App.css'
 import { Routes, Route, Navigate } from "react-router-dom";
 
 // import pages and components
-import { ProductCardComponet } from './components/productCardComponent';
 import HomePage from './pages/homePage';
-import ProductDets from './pages/prouctDets';
+import ProductDetails from './pages/prouctDets';
 
 
 
@@ -15,7 +14,7 @@ function App() {
     // <ProductCardComponet />
     <Routes>
       <Route path="/" element={<HomePage />}/>
-      <Route path="/product/discription" element={<ProductDets />} />
+      <Route path="/product/:id" element={<ProductDetails />} />
     </Routes>
   )
 }

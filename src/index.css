@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+/* Hide default slick arrow icons */
+.slick-prev::before,
+.slick-next::before {
+  content: none !important;
+}
